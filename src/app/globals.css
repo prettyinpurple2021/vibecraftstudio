@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,13 +15,13 @@ body {
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
+    --primary: 264 73% 53%; /* Vibrant Purple (#8A2BE2) in HSL */
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
+    --secondary: 177 100% 41%; /* Bright Teal (#00CED1) in HSL */
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
+    --accent: 330 100% 72%; /* Hot Pink (#FF69B4) in HSL */
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -76,6 +77,31 @@ body {
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  body {
+    font-family: 'Montserrat', sans-serif; /* Example body font */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif; /* Example headline font */
+    font-weight: bold;
+  }
+
+  .glitter-overlay {
+    /* Implement subtle glitter effect here */
+    /* Example: background-image: url('/glitter.gif'); */
+  }
+
+  .paint-splatter {
+    /* Implement paint splatter graphics */
+    /* Example: background-image: url('/splatter.png'); */
+    /* You might need to position and size these carefully */
+  }
 }
 
 @layer base {
@@ -86,3 +112,4 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
