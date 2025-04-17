@@ -2,8 +2,9 @@
 
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
-import {signIn, signOut, useSession} from "next-auth/react";
+import {useSession} from "next-auth/react";
 import {useState} from "react";
+import { signIn, signOut } from './actions';
 
 export default function Home() {
   const {data: session} = useSession();
@@ -44,7 +45,7 @@ export default function Home() {
             <div className="text-red-500 mb-4">Error: {error}</div>
           )}
           <div className="flex space-x-4">
-            <Button onClick={() => signIn("google")} className="mr-2">
+            <Button onClick={() => signIn('google')} className="mr-2">
               Sign in with Google
             </Button>
 
