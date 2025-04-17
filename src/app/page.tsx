@@ -3,9 +3,11 @@
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {signIn, signOut, useSession} from "next-auth/react";
+import {useState} from "react";
 
 export default function Home() {
   const {data: session} = useSession();
+  const [error, setError] = useState<string | null>(null);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100">
@@ -38,6 +40,9 @@ export default function Home() {
           <p className="text-lg mb-6">
             Define your brand's visual identity.
           </p>
+          {error && (
+            <div className="text-red-500 mb-4">Error: {error}</div>
+          )}
           <div className="flex space-x-4">
             <Button onClick={() => signIn("google")} className="mr-2">
               Sign in with Google
