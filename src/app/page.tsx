@@ -1,31 +1,18 @@
+'use client';
 
-
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
-import { Button } from "@/components/ui/button";
-import { signIn, signOut } from "next-auth/react";
+import {Button} from "@/components/ui/button";
 import Link from "next/link";
+import {signIn, signOut, useSession} from "next-auth/react";
 
-async function getSession() {
-  try {
-    return await getServerSession(authOptions);
-  } catch (error) {
-    console.error("Failed to retrieve session:", error);
-    return null; // Or handle the error as appropriate for your app
-  }
-}
-
-export default async function Home() {
-  const session = await getSession();
+export default function Home() {
+  const {data: session} = useSession();
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100">
       <h1 className="text-4xl font-bold mb-8">VibeCraft Studio</h1>
 
-
       {session ? (
         <>
-
           <p className="text-lg mb-6">
             Welcome, {session?.user?.name ?? "User"}!
           </p>
@@ -52,7 +39,7 @@ export default async function Home() {
             Define your brand's visual identity.
           </p>
           <div className="flex space-x-4">
-             <Button onClick={() => signIn("google")} className="mr-2">
+            <Button onClick={() => signIn("google")} className="mr-2">
               Sign in with Google
             </Button>
 
