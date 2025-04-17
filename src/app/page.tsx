@@ -34,7 +34,7 @@ export default async function Home() {
           <p className="text-lg mb-4">
             Define your brand's visual identity.
           </p>
-          <Button className="mr-2" onClick={() => signIn('google')}>
+          <Button className="mr-2">
             Sign in with Google
           </Button>
           {/* Placeholder for Email/Password Signup */}
