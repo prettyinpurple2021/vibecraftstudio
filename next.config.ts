@@ -33,6 +33,10 @@ const nextConfig: NextConfig = {
   },
 };
 module.exports = {
-  allowedDevOrigins: ['local-origin.dev', '*.local-origin.dev'],
+  allowedDevOrigins: [
+    'local-origin.dev',
+    '*.local-origin.dev',
+    '3000-idx-studio-1744886092092.cluster-2xid2zxbenc4ixa74rpk7q7fyk.cloudworkstations.dev',
+  ],
 }
 export default nextConfig;

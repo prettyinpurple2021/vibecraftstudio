@@ -1,4 +1,4 @@
-'use client';
+
 
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
@@ -15,17 +15,17 @@ async function getSession() {
   }
 }
 
-export default function Home() {
-  const session = getSession();
+export default async function Home() {
+  const session = await getSession();
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100">
       <h1 className="text-4xl font-bold mb-8">VibeCraft Studio</h1>
 
-      {/* @ts-expect-error Server component */}
+
       {session ? (
         <>
-          {/* @ts-expect-error Server component */}
+
           <p className="text-lg mb-6">
             Welcome, {session?.user?.name ?? "User"}!
           </p>
