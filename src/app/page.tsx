@@ -5,6 +5,7 @@ import Link from "next/link";
 import {useSession} from "next-auth/react";
 import {useState} from "react";
 import { signIn, signOut } from './actions';
+import Image from 'next/image';
 
 export default function Home() {
   const {data: session} = useSession();
@@ -12,7 +13,13 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100">
-      <h1 className="text-4xl font-bold mb-8">VibeCraft Studio</h1>
+      <Image
+        src="/vibe_craft_logo.png" // Path to your image in the public directory
+        alt="VibeCraft Studio Logo"
+        width={200} // Adjust the width as needed
+        height={200} // Adjust the height as needed
+        className="mb-8"
+      />
 
       {session ? (
         <>
@@ -26,15 +33,6 @@ export default function Home() {
             </Button>
             <Button onClick={() => signOut()}>Sign out</Button>
           </div>
-
-          {/* You can add a basic moodboard display here later if you want */}
-          {/* <div className="mt-8">
-            <h2 className="text-2xl font-semibold mb-4">Your Mood Boards</h2>
-            <p className="mb-4">No mood boards yet. Start creating one!</p>
-            <Button asChild>
-              <Link href="/moodboard">Create New Mood Board</Link>
-            </Button>
-          </div> */}
         </>
       ) : (
         <>
