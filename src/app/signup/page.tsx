@@ -1,4 +1,3 @@
-tsx
 // src/app/signup/page.tsx
 import React from 'react';
 
