@@ -1,13 +1,13 @@
-
 // src/app/vibe-check/page.tsx
 import React from 'react';
+import Quiz from '@/components/quiz/Quiz';
 
 const VibeCheckPage = () => {
   return (
     <div>
       <h1>Vibe Check Quiz</h1>
-      <p>Interactive quiz will be implemented here.</p>
-      {/* Quiz component will go here */}
+      <p>Answer the following questions to define your brand's visual identity.</p>
+      <Quiz />
     </div>
   );
 };
