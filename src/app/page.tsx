@@ -4,7 +4,7 @@ import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {useSession} from "next-auth/react";
 import {useState} from "react";
-import { signIn, signOut } from './actions';
+import { signIn, signOut } from './actions';;
 import Image from 'next/image';
 
 export default function Home() {
