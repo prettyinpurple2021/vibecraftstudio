@@ -1,3 +1,4 @@
+
 'use client';
 
 import {Button} from "@/components/ui/button";
@@ -46,7 +47,9 @@ export default function Home() {
             <Button onClick={() => signIn('google')} className="mr-2">
               Sign in with Google
             </Button>
-
+             <Button asChild variant="secondary" className="mr-2">
+              <Link href="/signin">Sign in with Email</Link>
+            </Button>
             <Button asChild variant="secondary">
               <Link href="/signup">Sign up with Email</Link>
             </Button>
